@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-simple-pdf-viewer/static/css/main.a2b7b0b6.chunk.css",
+    "main.js": "/react-simple-pdf-viewer/static/js/main.7960cc7e.chunk.js",
+    "main.js.map": "/react-simple-pdf-viewer/static/js/main.7960cc7e.chunk.js.map",
+    "runtime-main.js": "/react-simple-pdf-viewer/static/js/runtime-main.981e416b.js",
+    "runtime-main.js.map": "/react-simple-pdf-viewer/static/js/runtime-main.981e416b.js.map",
+    "static/js/2.8a39aae4.chunk.js": "/react-simple-pdf-viewer/static/js/2.8a39aae4.chunk.js",
+    "static/js/2.8a39aae4.chunk.js.map": "/react-simple-pdf-viewer/static/js/2.8a39aae4.chunk.js.map",
+    "index.html": "/react-simple-pdf-viewer/index.html",
+    "precache-manifest.e5e593dbf40c0f6bf5b5d3305cada509.js": "/react-simple-pdf-viewer/precache-manifest.e5e593dbf40c0f6bf5b5d3305cada509.js",
+    "service-worker.js": "/react-simple-pdf-viewer/service-worker.js",
+    "static/css/main.a2b7b0b6.chunk.css.map": "/react-simple-pdf-viewer/static/css/main.a2b7b0b6.chunk.css.map",
+    "static/js/2.8a39aae4.chunk.js.LICENSE.txt": "/react-simple-pdf-viewer/static/js/2.8a39aae4.chunk.js.LICENSE.txt",
+    "static/js/main.7960cc7e.chunk.js.LICENSE.txt": "/react-simple-pdf-viewer/static/js/main.7960cc7e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.981e416b.js",
+    "static/js/2.8a39aae4.chunk.js",
+    "static/css/main.a2b7b0b6.chunk.css",
+    "static/js/main.7960cc7e.chunk.js"
+  ]
+}
