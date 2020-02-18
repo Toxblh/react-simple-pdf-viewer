@@ -41,7 +41,7 @@ export default {
       include: 'node_modules/**',
       namedExports: {
         'node_modules/react-is/index.js': ['isElement', 'isValidElementType'],
-        'node_modules/react-pdf/dist/entry.js': ['Document', 'Page']
+        'node_modules/react-pdf/dist/entry.webpack.js': ['Document', 'Page']
       }
     })
   ]
