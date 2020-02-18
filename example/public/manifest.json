@@ -1,0 +1,8 @@
+{
+  "short_name": "react-simple-pdf-viewer",
+  "name": "react-simple-pdf-viewer",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
