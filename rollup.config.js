@@ -6,11 +6,13 @@ import postcss from 'rollup-plugin-postcss'
 import resolve from 'rollup-plugin-node-resolve'
 import url from 'rollup-plugin-url'
 import svgr from '@svgr/rollup'
+import copy from 'rollup-plugin-copy'
 
 import pkg from './package.json'
 
 export default {
   input: 'src/index.tsx',
+  external: [ 'react-pdf' ],
   output: [
     {
       file: pkg.main,
@@ -41,8 +43,13 @@ export default {
       include: 'node_modules/**',
       namedExports: {
         'node_modules/react-is/index.js': ['isElement', 'isValidElementType'],
-        'node_modules/react-pdf/dist/entry.webpack.js': ['Document', 'Page']
+        'node_modules/react-pdf/dist/entry.webpack.js': ['Document', 'Page', 'pdfjs' ]
       }
+    }),
+    copy({
+      targets: [
+        { src: 'src/pdf.worker.entry.js', dest: 'dist' }
+      ]
     })
   ]
 }

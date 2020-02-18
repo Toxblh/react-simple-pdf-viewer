@@ -1,13 +1,13 @@
 import * as React from "react";
 import { useState, memo } from "react";
-import { Document, Page } from 'react-pdf/dist/entry.webpack';
+import { Document, Page } from "react-pdf/dist/entry.webpack";
 import { PDFDocument, OverflowWrap, Container, Toolbar } from "./styles";
 
 import "react-pdf/dist/Page/AnnotationLayer.css";
 
 type Props = {
   // Blob works only in Browser enviroment
-  pdf: string | Blob | Uint8Array
+  pdf: string | Blob | Uint8Array;
 };
 
 function PDFViewer(props: Props) {
