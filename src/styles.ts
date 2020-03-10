@@ -1,81 +1,179 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(82, 86, 89);
+export const Header = styled.div`
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: normal;
 `;
 
-export const OverflowWrap = styled.div`
-  display: block;
+export const Root = styled.div`
   position: relative;
   width: 100%;
-  height: 100%;
-  overflow: auto;
-`;
-
-export const Toolbar = styled.div`
-  position: absolute;
-  right: 20px;
-  bottom: 10px;
-  z-index: 1;
   display: flex;
-  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+`;
 
-  button {
-    background: white;
-    color: black;
-    width: 40px;
-    height: 40px;
-    border-radius: 25px;
-    margin: 5px 0 0;
-    box-shadow: 0px 1px 6px -2px black;
-    outline: none;
-    font-size: 21px;
-    padding-bottom: 4px;
-    user-select: none;
+export const Wrap = styled.div`
+  width: 900px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+
+  &:fullscreen {
+    display: flex;
+  }
+
+  @media (max-width: 900px) {
+    width: 100%;
   }
 `;
 
-export const PDFDocument = styled.div<{ width?: number; container?: number }>`
-  width: ${({ width, container }: { width?: number; container?: number }) => {
-    if (width !== undefined && container !== undefined) {
-      if (width < container) {
-        return `calc(${width}px)`;
-      } else {
-        return `calc(${width}px + 3em)`;
+export const Canvas = styled.canvas`
+  display: block;
+`;
+
+export const TextAndAnnotationLayer = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  line-height: 1;
+  border: 1px solid #ececec;
+
+  & section {
+    color: transparent;
+    position: absolute;
+    white-space: pre;
+    cursor: text;
+    transform-origin: 0% 0%;
+  }
+
+  & section > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  & > span {
+    color: transparent;
+    pointer-events: all;
+    position: absolute;
+    white-space: pre;
+    cursor: text;
+    transform-origin: 0% 0%;
+  }
+`;
+
+export const Document = styled.div`
+  position: relative;
+
+  &:hover {
+    .controls {
+      opacity: 1;
+    }
+  }
+
+  &:fullscreen {
+    border: none;
+
+    &:hover {
+      .controls {
+        opacity: 0;
       }
     }
 
-    return "fit-content";
-  }};
-
-  && {
-    .react-pdf {
-      &__Document {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .controls {
+      &:hover {
+        opacity: 1 !important;
       }
+    }
 
-      &__Page {
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
-        margin: 10px 20px 0px 20px;
+    &.vertical {
+      .page {
+        height: 100%;
+        overflow-x: auto;
 
         canvas {
-          height: auto !important;
-        }
-        &:last-child {
-          margin-bottom: 20px;
+          margin: 0 auto;
         }
       }
+    }
 
-      &__message {
-        padding: 20px;
-        color: white;
+    &.horizontal {
+      .page {
+        height: 100%;
+        overflow-y: auto;
+        display: flex;
+        align-items: center;
       }
     }
   }
+`;
+
+export const Controls = styled.div`
+  height: 42px;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const LeftRightControls = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+`;
+
+export const Previous = styled.div`
+  width: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row nowrap;
+  cursor: pointer;
+  margin-left: 10px;
+
+  &::before {
+    content: "";
+    background-image: url("./images/arrow.svg");
+    width: 8px;
+    height: 13px;
+  }
+`;
+
+export const Next = styled.div`
+  width: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row nowrap;
+  cursor: pointer;
+  transform: rotate(180deg);
+  margin-left: 8px;
+
+  &::before {
+    content: "";
+    background-image: url("./images/arrow.svg");
+    width: 8px;
+    height: 13px;
+  }
+`;
+
+export const Pages = styled.div`
+  margin-left: 20px;
+  color: #fff;
+  font-size: 14px;
 `;
